@@ -1,7 +1,7 @@
 import { MessageEntity } from "../deps.deno.ts";
 
 export function formatHTML(text = "", entities: MessageEntity[] = []) {
-  const chars = [...text];
+  const chars = text;
   const available = [...entities];
   const opened: MessageEntity[] = [];
   const result: string[] = [];
