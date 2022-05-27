@@ -70,11 +70,13 @@ function unparse(
         html.push(`<code>${text_}</code>`);
         break;
       case "pre":
-        html.push(
-          `<pre${
-            entity.language && ` class="${entity.language}"`
-          }>${text_}</pre>`,
-        );
+        if (entity.language) {
+          html.push(
+            `<pre><code class="language-${entity.language}">${text_}</code></pre>`,
+          );
+        } else {
+          html.push(`<pre>${text_}</pre>`);
+        }
         break;
       default:
         skipEntity = true;
