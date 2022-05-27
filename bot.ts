@@ -1,5 +1,5 @@
 import { Bot } from "./deps.deno.ts";
-import { formatHTML } from "./lib/formatHtml.ts";
+import { formatHTML } from "./lib/formatHTML.ts";
 
 export const bot = new Bot(Deno.env.get("TOKEN") || "");
 
