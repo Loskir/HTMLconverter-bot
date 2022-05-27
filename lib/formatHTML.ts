@@ -4,9 +4,9 @@ function escape(s: string) {
   return s
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/\'/g, "&#x27;");
+    .replace(/>/g, "&gt;");
+  // .replace(/"/g, "&quot;")
+  // .replace(/\'/g, "&#x27;");
 }
 
 // Taken from https://github.com/tginfo/translator-bot/blob/acd27d9e63dc177d49126ecc958a21d1bb34a423/utils.ts#L131
