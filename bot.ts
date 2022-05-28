@@ -15,11 +15,11 @@ Send me a message to convert it`,
 });
 
 bot.on("message:text", (ctx) => {
-  return ctx.reply(formatHTML(ctx.msg.text, ctx.msg.entities))
+  return ctx.reply(formatHTML(ctx.msg.text, ctx.msg.entities));
 });
 
 bot.on("message:caption", (ctx) => {
-  return ctx.reply(formatHTML(ctx.msg.caption, ctx.msg.caption_entities))
+  return ctx.reply(formatHTML(ctx.msg.caption, ctx.msg.caption_entities));
 });
 
 bot.command("ping", (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`));
