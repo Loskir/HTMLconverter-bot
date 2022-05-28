@@ -15,11 +15,27 @@ Send me a message to convert it`,
 });
 
 bot.on("message:text", (ctx) => {
-  return ctx.reply(formatHTML(ctx.msg.text, ctx.msg.entities));
+  const text = formatHTML(ctx.msg.text, ctx.msg.entities);
+  return ctx.reply(text, {
+    entities: [{
+      type: "pre",
+      language: "html",
+      offset: 0,
+      length: text.length,
+    }],
+  });
 });
 
 bot.on("message:caption", (ctx) => {
-  return ctx.reply(formatHTML(ctx.msg.caption, ctx.msg.caption_entities));
+  const text = formatHTML(ctx.msg.caption, ctx.msg.caption_entities);
+  return ctx.reply(text, {
+    entities: [{
+      type: "pre",
+      language: "html",
+      offset: 0,
+      length: text.length,
+    }],
+  });
 });
 
 bot.command("ping", (ctx) => ctx.reply(`Pong! ${new Date()} ${Date.now()}`));
